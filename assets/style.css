@@ -131,7 +131,7 @@ a { color: var(--kaki-dark); font-weight: 500; }
 
 /* ---- Forms ---------------------------------------------------------------- */
 label, .label { display: block; font-weight: 700; margin-bottom: .25rem; }
-input[type="text"], input[type="password"], input[type="date"], textarea {
+input[type="text"], input[type="password"], textarea {
   width: 100%; font: inherit; color: var(--ink);
   padding: .65rem .85rem;
   border: 1.5px solid var(--line); border-radius: 12px; background: #fff;
@@ -259,11 +259,6 @@ td.money { font-variant-numeric: tabular-nums; font-weight: 700; }
 tfoot td { font-weight: 700; border-top: 2px solid var(--matcha); border-bottom: 0; }
 
 /* ---- Haircut ---------------------------------------------------------------------- */
-.day-picker { display: flex; flex-wrap: wrap; align-items: end; gap: .75rem 1rem; margin-bottom: 1rem; }
-.day-picker .field { margin: 0; }
-.day-picker input[type="date"] { width: auto; min-width: 11rem; }
-.day-nav { display: flex; gap: .4rem; }
-.day-title { margin: 0 0 .75rem; font-size: 1.2rem; font-weight: 700; }
 .slots th, .slots td { text-align: left; padding: .7rem .9rem; vertical-align: middle; }
 .slots thead th { position: static; }
 .slots tbody th[scope="row"] { position: static; background: var(--row, #fff); color: var(--ink); font-variant-numeric: tabular-nums; white-space: nowrap; font-weight: 700; }
@@ -326,3 +321,81 @@ tfoot td { font-weight: 700; border-top: 2px solid var(--matcha); border-bottom:
   * { transition: none !important; }
   .tile:hover, .link-card:hover { transform: none; }
 }
+
+/* ---- Icons -------------------------------------------------------------------------- */
+.icon { display: inline-block; flex: none; width: 1.2em; height: 1.2em; vertical-align: -.2em; }
+.icon svg { display: block; width: 100%; height: 100%; }
+.icon-md { width: 2.6rem; height: 2.6rem; }
+.icon-lg { width: 3.4rem; height: 3.4rem; }
+h1 .icon, h2 .icon, h3 .icon, legend .icon { width: 1.35em; height: 1.35em; vertical-align: -.3em; margin-right: .3rem; }
+.gate-title .icon { width: 2.4rem; height: 2.4rem; vertical-align: -.6rem; }
+.chip {
+  display: grid; place-items: center; flex: none;
+  width: 3.6rem; height: 3.6rem; border-radius: 50%;
+  background: rgba(255, 254, 251, .92); border: 1px solid var(--line);
+  box-shadow: 0 2px 0 rgba(184, 74, 31, .06);
+}
+.chip .icon { width: 2.3rem; height: 2.3rem; }
+
+/* ---- English + Japanese text ---------------------------------------------------------- */
+.ja-line { display: block; margin-top: .15rem; font-size: .9em; font-weight: 400; color: var(--muted); }
+.lede .ja-line { font-size: .95em; }
+.status .ja-line { color: inherit; opacity: .9; }
+label .ja, legend .ja, .btn .ja, .add-notice summary .ja, .product-name .ja, .updated .ja, .board-note .ja { font-size: .85em; font-weight: 500; margin-left: .4rem; }
+label .ja, .product-name .ja, .updated .ja, .board-note .ja { color: var(--muted); }
+.btn .ja { color: inherit; opacity: .95; }
+.btn-quiet .ja { color: var(--kaki-dark); }
+.th-ja { display: block; font-size: .72rem; font-weight: 500; opacity: .92; }
+.foot-ja { margin-left: .5rem; }
+.total-line .ja { font-size: .8em; margin-left: .4rem; color: var(--muted); }
+
+/* ---- Page heads, hero, tiles ------------------------------------------------------------ */
+.page-head { display: flex; align-items: center; gap: 1rem; }
+.page-head > div { min-width: 0; }
+.hero-art { display: flex; flex-wrap: wrap; gap: .6rem; margin-top: 1.4rem; }
+.tile .chip { margin-bottom: .7rem; }
+.link-card { display: flex; align-items: flex-start; gap: 1rem; }
+.link-card > div { min-width: 0; }
+.link-card .chip { margin-top: .1rem; }
+.link-card .link-title { margin-top: .4rem; }
+.link-card .link-desc { margin: .4rem 0 0; color: var(--muted); font-size: .95rem; }
+
+/* ---- Orders: amending ------------------------------------------------------------------------ */
+.banner {
+  background: var(--matcha-soft); border: 1px solid #CFE0BC; border-radius: 14px;
+  padding: .7rem 1rem; margin: 0 0 1.1rem; color: var(--matcha-dark);
+}
+.banner .ja-line { color: var(--matcha-dark); }
+.form-actions { display: grid; gap: .6rem; }
+.confirm { background: var(--sakura-soft); border: 1px solid var(--sakura); border-radius: 14px; padding: .8rem 1rem; }
+.confirm p { margin: 0; }
+.confirm .row { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: .7rem; }
+.btn-danger { background: var(--error); box-shadow: 0 2px 0 #7A1C13; }
+.btn-danger:hover { background: #7A1C13; }
+
+/* ---- Haircut ------------------------------------------------------------------------------------- */
+.name-field { max-width: 22rem; }
+.slot-time { display: inline-flex; align-items: center; gap: .55rem; }
+
+/* ---- Logs ---------------------------------------------------------------------------------------- */
+.log-icons { display: inline-flex; gap: .15rem; align-self: center; }
+.log-icons .icon { width: 1.6rem; height: 1.6rem; }
+.log-text .ja-line { margin-top: .1rem; }
+.log-meta .ja-line { margin-top: 0; }
+
+@media (max-width: 520px) {
+  .page-head { gap: .75rem; }
+  .icon-lg { width: 2.8rem; height: 2.8rem; }
+  .chip { width: 3.2rem; height: 3.2rem; }
+  .chip .icon { width: 2rem; height: 2rem; }
+  .link-card { gap: .8rem; }
+}
+
+/* ---- Small spacing fixes ---------------------------------------------------------------------- */
+.slot-free .ja, .lede a .ja { margin-left: .4rem; font-size: .85em; }
+@media (max-width: 520px) {
+  .slots .btn .ja { display: block; margin-left: 0; font-size: .7rem; line-height: 1.1; }
+  .slots .btn-small { text-align: center; line-height: 1.2; padding: .3rem .7rem; }
+  .slot-free .ja { display: block; margin-left: 0; font-size: .75rem; }
+}
+.chip .ja { margin-left: .35rem; }
