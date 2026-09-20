@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#B84A1F">
-<title>Home | Colchester Japanese Community</title>
-<meta name="description" content="News, group orders, haircut bookings and handy links for the Colchester Japanese community.">
+<title>Home ホーム | Colchester Japanese Community 日本人会</title>
+<meta name="description" content="News, group orders, haircut bookings and handy links for the Colchester Japanese community. コルチェスター日本人会のお知らせ・注文・散髪予約・リンク集。">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -32,81 +32,93 @@
 <main class="wrap">
   <!-- Passcode gate: nothing else on the page is shown until the group passcode is accepted -->
   <section id="gate" class="panel gate">
-    <h1 class="gate-title">Welcome <span class="ja" lang="ja">ようこそ</span></h1>
-    <p class="lede">This is a private space for our community. Please enter the group passcode to come in.</p>
-    <form id="gate-form" autocomplete="off">
+    <h1 class="gate-title"><span class="icon" data-icon="torii"></span>Welcome <span class="ja" lang="ja">ようこそ</span></h1>
+    <p class="lede">This is a private space for our community. Please enter the group passcode to come in.<span class="ja-line" lang="ja">ここは私たちのコミュニティのための非公開のスペースです。入るにはグループのパスコードを入力してください。</span></p>
+    <form id="gate-form" autocomplete="off" novalidate>
       <div class="field">
-        <label for="code">Passcode</label>
+        <label for="code">Passcode<span class="ja" lang="ja">パスコード</span></label>
         <input type="password" id="code" required>
       </div>
-      <button class="btn btn-block" type="submit">Come in</button>
+      <button class="btn btn-block" type="submit">Come in<span class="ja" lang="ja">入る</span></button>
       <p id="gate-status" class="status" role="status" aria-live="polite"></p>
     </form>
   </section>
 
   <div id="app" hidden>
-  <section class="hero">
-    <h1><span lang="ja">こんにちは！</span> Welcome</h1>
-    <p class="lede">A friendly little corner of the internet for our community. Catch up on the latest news, place your group order, book a haircut and find handy links, all in one place.</p>
-  </section>
+    <section class="hero">
+      <h1><span lang="ja">こんにちは！</span> Welcome</h1>
+      <p class="lede">A friendly little corner of the internet for our community. Catch up on the latest news, place your group order, book a haircut and find handy links, all in one place.<span class="ja-line" lang="ja">私たちのコミュニティのための、あたたかい小さな居場所です。最新のお知らせを確認したり、グループ注文をしたり、散髪を予約したり、便利なリンクを見つけたり。すべてここでできます。</span></p>
+      <div class="hero-art" aria-hidden="true">
+        <span class="chip"><span class="icon" data-icon="daifuku"></span></span>
+        <span class="chip"><span class="icon" data-icon="tofu"></span></span>
+        <span class="chip"><span class="icon" data-icon="natto"></span></span>
+        <span class="chip"><span class="icon" data-icon="tea"></span></span>
+        <span class="chip"><span class="icon" data-icon="scissors"></span></span>
+      </div>
+    </section>
 
-  <section class="block" aria-labelledby="notices-h">
-    <div class="block-head">
-      <h2 id="notices-h">Latest notifications <span class="ja" lang="ja">最新のお知らせ</span></h2>
-      <button class="btn btn-quiet" id="notices-refresh" type="button">Refresh</button>
-    </div>
+    <section class="block" aria-labelledby="notices-h">
+      <div class="block-head">
+        <h2 id="notices-h"><span class="icon" data-icon="bell"></span>Latest notifications <span class="ja" lang="ja">最新のお知らせ</span></h2>
+        <button type="button" class="btn btn-quiet" id="notices-refresh">Refresh<span class="ja" lang="ja">更新</span></button>
+      </div>
 
-    <p id="notice-state" class="empty" role="status">Loading notices…</p>
-    <ul id="notice-list" class="notices"></ul>
+      <p id="notice-state" class="empty" role="status">Loading notices…<span class="ja-line" lang="ja">お知らせを読み込み中…</span></p>
+      <ul id="notice-list" class="notices"></ul>
 
-    <details class="panel add-notice" id="add-notice">
-      <summary>Add a notice for everyone</summary>
-      <form id="notice-form" autocomplete="off">
-        <div class="field">
-          <label for="n-name">Your name</label>
-          <input type="text" id="n-name" maxlength="40" required>
-        </div>
-        <div class="field">
-          <label for="n-message">Message</label>
-          <textarea id="n-message" rows="4" maxlength="500" required></textarea>
-          <span class="hint" id="n-count">0 / 500</span>
-        </div>
-        <button class="btn" type="submit" id="n-send">Post notice</button>
-        <p id="n-status" class="status" role="status" aria-live="polite"></p>
-      </form>
-    </details>
-  </section>
+      <details class="panel add-notice" id="add-notice">
+        <summary>Add a notice for everyone<span class="ja" lang="ja">みんなにお知らせを追加</span></summary>
+        <form id="notice-form" autocomplete="off" novalidate>
+          <div class="field">
+            <label for="n-name">Your name<span class="ja" lang="ja">お名前</span></label>
+            <input type="text" id="n-name" maxlength="40" required>
+          </div>
+          <div class="field">
+            <label for="n-message">Message<span class="ja" lang="ja">メッセージ</span></label>
+            <textarea id="n-message" rows="4" maxlength="500" required></textarea>
+            <span class="hint" id="n-count">0 / 500</span>
+          </div>
+          <button class="btn" type="submit" id="n-send">Post notice<span class="ja" lang="ja">お知らせを投稿</span></button>
+          <p id="n-status" class="status" role="status" aria-live="polite"></p>
+        </form>
+      </details>
+    </section>
 
-  <section class="block" aria-labelledby="explore-h">
-    <div class="block-head">
-      <h2 id="explore-h">Around the site <span class="ja" lang="ja">メニュー</span></h2>
-    </div>
-    <ul class="tiles">
-      <li><a class="tile" style="--c: var(--kaki)" href="orders.html">
-        <span class="tile-title">Orders<span class="ja" lang="ja">ご注文</span></span>
-        <p>Choose your daifuku, tofu and natto for the group order.</p>
-      </a></li>
-      <li><a class="tile" style="--c: var(--matcha)" href="haircut.html">
-        <span class="tile-title">Haircut<span class="ja" lang="ja">散髪</span></span>
-        <p>Book a one-hour slot between 09:00 and 17:00.</p>
-      </a></li>
-      <li><a class="tile" style="--c: var(--sakura-deep)" href="logs.html">
-        <span class="tile-title">Logs<span class="ja" lang="ja">履歴</span></span>
-        <p>See who added what to the orders, and when.</p>
-      </a></li>
-      <li><a class="tile" style="--c: #C99A2E" href="links.html">
-        <span class="tile-title">Links<span class="ja" lang="ja">リンク</span></span>
-        <p>Handy websites we like to visit.</p>
-      </a></li>
-    </ul>
-  </section>
+    <section class="block" aria-labelledby="explore-h">
+      <div class="block-head">
+        <h2 id="explore-h">Around the site <span class="ja" lang="ja">メニュー</span></h2>
+      </div>
+      <ul class="tiles">
+        <li><a class="tile" style="--c: var(--kaki)" href="orders.html">
+          <span class="chip"><span class="icon" data-icon="basket"></span></span>
+          <span class="tile-title">Orders<span class="ja" lang="ja">ご注文</span></span>
+          <p>Choose your daifuku, tofu and natto for the group order.<span class="ja-line" lang="ja">グループ注文で、大福・お豆腐・納豆を選びましょう。</span></p>
+        </a></li>
+        <li><a class="tile" style="--c: var(--matcha)" href="haircut.html">
+          <span class="chip"><span class="icon" data-icon="scissors"></span></span>
+          <span class="tile-title">Haircut<span class="ja" lang="ja">散髪</span></span>
+          <p>Book a one-hour slot between 09:00 and 17:00.<span class="ja-line" lang="ja">9:00〜17:00の間で、1時間の枠を予約できます。</span></p>
+        </a></li>
+        <li><a class="tile" style="--c: var(--sakura-deep)" href="logs.html">
+          <span class="chip"><span class="icon" data-icon="notebook"></span></span>
+          <span class="tile-title">Logs<span class="ja" lang="ja">履歴</span></span>
+          <p>See who added or changed what on the orders, and when.<span class="ja-line" lang="ja">誰がいつ注文を追加・変更したか確認できます。</span></p>
+        </a></li>
+        <li><a class="tile" style="--c: #C99A2E" href="links.html">
+          <span class="chip"><span class="icon" data-icon="link"></span></span>
+          <span class="tile-title">Links<span class="ja" lang="ja">リンク</span></span>
+          <p>Handy websites we like to visit.<span class="ja-line" lang="ja">私たちがよく見る便利なウェブサイトです。</span></p>
+        </a></li>
+      </ul>
+    </section>
   </div>
 </main>
 
 <footer class="site-footer">
-  <div class="wrap"><p>Colchester Japanese Community 日本人会 · Made with care for everyone here.</p></div>
+  <div class="wrap"><p>Colchester Japanese Community 日本人会 · Made with care for everyone here.<span class="ja foot-ja" lang="ja">ここにいるみんなのために、心を込めて。</span></p></div>
 </footer>
 
+<script src="assets/icons.js"></script>
 <script src="assets/site.js"></script>
 <script src="assets/home.js"></script>
 </body>

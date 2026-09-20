@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#B84A1F">
-<title>Haircut | Colchester Japanese Community</title>
+<title>Haircut 散髪 | Colchester Japanese Community 日本人会</title>
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -31,62 +31,59 @@
 <main class="wrap">
   <!-- Passcode gate: nothing else on the page is shown until the group passcode is accepted -->
   <section id="gate" class="panel gate">
-    <h1 class="gate-title">Welcome <span class="ja" lang="ja">ようこそ</span></h1>
-    <p class="lede">This is a private space for our community. Please enter the group passcode to come in.</p>
-    <form id="gate-form" autocomplete="off">
+    <h1 class="gate-title"><span class="icon" data-icon="torii"></span>Welcome <span class="ja" lang="ja">ようこそ</span></h1>
+    <p class="lede">This is a private space for our community. Please enter the group passcode to come in.<span class="ja-line" lang="ja">ここは私たちのコミュニティのための非公開のスペースです。入るにはグループのパスコードを入力してください。</span></p>
+    <form id="gate-form" autocomplete="off" novalidate>
       <div class="field">
-        <label for="code">Passcode</label>
+        <label for="code">Passcode<span class="ja" lang="ja">パスコード</span></label>
         <input type="password" id="code" required>
       </div>
-      <button class="btn btn-block" type="submit">Come in</button>
+      <button class="btn btn-block" type="submit">Come in<span class="ja" lang="ja">入る</span></button>
       <p id="gate-status" class="status" role="status" aria-live="polite"></p>
     </form>
   </section>
 
   <div id="app" hidden>
     <div class="page-head">
-      <h1>Haircut <span class="ja" lang="ja">散髪</span></h1>
-      <p class="lede">Pick a day, then book a one-hour slot between 09:00 and 17:00. Each slot is for one person.</p>
+      <span class="icon icon-lg" data-icon="scissors"></span>
+      <div>
+        <h1>Haircut <span class="ja" lang="ja">散髪</span></h1>
+        <p class="lede">Book a one-hour slot between 09:00 and 17:00. Each slot is for one person.<span class="ja-line" lang="ja">9:00〜17:00の間で、1時間の枠を予約できます。1つの枠につき1名です。</span></p>
+      </div>
     </div>
 
-    <section class="panel" aria-labelledby="day-heading">
-      <div class="day-picker">
-        <div class="field">
-          <label for="hc-name">Your name</label>
-          <input type="text" id="hc-name" maxlength="40" autocomplete="off">
-        </div>
-        <div class="field">
-          <label for="hc-day">Day</label>
-          <input type="date" id="hc-day">
-        </div>
-        <div class="day-nav">
-          <button type="button" class="btn btn-quiet" id="hc-prev">&larr; Previous day</button>
-          <button type="button" class="btn btn-quiet" id="hc-next">Next day &rarr;</button>
-        </div>
+    <section class="panel" aria-labelledby="hc-heading">
+      <h2 id="hc-heading" class="sr-only">Haircut schedule</h2>
+      <div class="field name-field">
+        <label for="hc-name">Your name<span class="ja" lang="ja">お名前</span></label>
+        <input type="text" id="hc-name" maxlength="40" autocomplete="off">
       </div>
-
-      <h2 class="day-title" id="day-heading"></h2>
 
       <div class="table-wrap">
         <table class="slots">
-          <caption class="sr-only">Haircut time slots for the chosen day</caption>
+          <caption class="sr-only">Haircut time slots</caption>
           <thead>
-            <tr><th scope="col">Time</th><th scope="col">Name</th><th scope="col"><span class="sr-only">Action</span></th></tr>
+            <tr>
+              <th scope="col">Time<span class="th-ja" lang="ja">時間</span></th>
+              <th scope="col">Name<span class="th-ja" lang="ja">お名前</span></th>
+              <th scope="col"><span class="sr-only">Action</span></th>
+            </tr>
           </thead>
           <tbody id="slots"></tbody>
         </table>
       </div>
 
       <p id="hc-status" class="status" role="status" aria-live="polite"></p>
-      <p class="board-note"><span id="hc-updated"></span> <button type="button" class="btn btn-quiet" id="hc-refresh">Refresh</button></p>
+      <p class="board-note"><span id="hc-updated"></span> <button type="button" class="btn btn-quiet" id="hc-refresh">Refresh<span class="ja" lang="ja">更新</span></button></p>
     </section>
   </div>
 </main>
 
 <footer class="site-footer">
-  <div class="wrap"><p>Colchester Japanese Community 日本人会 · Made with care for everyone here.</p></div>
+  <div class="wrap"><p>Colchester Japanese Community 日本人会 · Made with care for everyone here.<span class="ja foot-ja" lang="ja">ここにいるみんなのために、心を込めて。</span></p></div>
 </footer>
 
+<script src="assets/icons.js"></script>
 <script src="assets/site.js"></script>
 <script src="assets/haircut.js"></script>
 </body>

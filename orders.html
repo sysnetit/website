@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#B84A1F">
-<title>Orders | Colchester Japanese Community</title>
+<title>Orders ご注文 | Colchester Japanese Community 日本人会</title>
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -31,50 +31,64 @@
 <main class="wrap">
   <!-- Passcode gate: nothing else on the page is shown until the group passcode is accepted -->
   <section id="gate" class="panel gate">
-    <h1 class="gate-title">Welcome <span class="ja" lang="ja">ようこそ</span></h1>
-    <p class="lede">This is a private space for our community. Please enter the group passcode to come in.</p>
-    <form id="gate-form" autocomplete="off">
+    <h1 class="gate-title"><span class="icon" data-icon="torii"></span>Welcome <span class="ja" lang="ja">ようこそ</span></h1>
+    <p class="lede">This is a private space for our community. Please enter the group passcode to come in.<span class="ja-line" lang="ja">ここは私たちのコミュニティのための非公開のスペースです。入るにはグループのパスコードを入力してください。</span></p>
+    <form id="gate-form" autocomplete="off" novalidate>
       <div class="field">
-        <label for="code">Passcode</label>
+        <label for="code">Passcode<span class="ja" lang="ja">パスコード</span></label>
         <input type="password" id="code" required>
       </div>
-      <button class="btn btn-block" type="submit">Come in</button>
+      <button class="btn btn-block" type="submit">Come in<span class="ja" lang="ja">入る</span></button>
       <p id="gate-status" class="status" role="status" aria-live="polite"></p>
     </form>
   </section>
 
   <div id="app" class="stack" hidden>
     <div class="page-head">
-      <h1>Orders <span class="ja" lang="ja">ご注文</span></h1>
-      <p class="lede">Choose what you would like from each section, send your order, and the tables below show what everyone has ordered.</p>
+      <span class="icon icon-lg" data-icon="basket"></span>
+      <div>
+        <h1>Orders <span class="ja" lang="ja">ご注文</span></h1>
+        <p class="lede">Choose what you would like from each section and send your order. The tables below show what everyone has ordered. You can change your order at any time: enter your name and your current order appears here, ready to amend.<span class="ja-line" lang="ja">各セクションから欲しいものを選んで注文を送信してください。下の表にみんなの注文が表示されます。注文はいつでも変更できます。お名前を入力すると、現在の注文がここに表示されます。</span></p>
+      </div>
     </div>
 
-    <p class="lede" style="margin:0"><a href="#board-heading">Jump to everyone's orders</a></p>
+    <p class="lede" style="margin:0"><a href="#board-heading">Jump to everyone's orders<span class="ja" lang="ja">みんなの注文へ移動</span></a></p>
 
     <section class="panel order" aria-labelledby="order-heading">
-      <h2 id="order-heading" style="margin-bottom:1rem">Your order</h2>
-      <form id="order-form" autocomplete="off">
+      <h2 id="order-heading" style="margin-bottom:1rem">Your order <span class="ja" lang="ja">あなたの注文</span></h2>
+      <div id="amend-banner" class="banner" hidden>You already have an order. Change anything below and press “Update my order” to replace it.<span class="ja-line" lang="ja">すでに注文があります。下で内容を変更し、「注文を更新」を押すと置き換えられます。</span></div>
+      <form id="order-form" autocomplete="off" novalidate>
         <div class="field">
-          <label for="name">Your name</label>
+          <label for="name">Your name<span class="ja" lang="ja">お名前</span></label>
           <input type="text" id="name" maxlength="40" required>
         </div>
         <fieldset class="field" id="collections">
-          <legend style="font-size:1rem">Collect from</legend>
+          <legend style="font-size:1rem">Collect from<span class="ja" lang="ja">受け取り場所</span></legend>
           <div class="choices" id="collection-choices"></div>
         </fieldset>
 
         <div id="sections"></div>
 
-        <p class="total-line" aria-live="polite">Your total <strong id="total">£0.00</strong><span class="hint" id="total-note"></span></p>
-        <button class="btn btn-block" type="submit" id="send">Send order</button>
+        <p class="total-line" aria-live="polite">Your total<span class="ja" lang="ja">合計</span> <strong id="total">£0.00</strong><span class="hint" id="total-note"></span></p>
+        <div class="form-actions">
+          <button class="btn btn-block" type="submit" id="send">Send order<span class="ja" lang="ja">注文を送信</span></button>
+          <button class="btn btn-quiet btn-block" type="button" id="remove" hidden>Remove my order<span class="ja" lang="ja">注文を取り消す</span></button>
+          <div class="confirm" id="remove-confirm" hidden>
+            <p>Remove your whole order?<span class="ja-line" lang="ja">注文全体を取り消しますか？</span></p>
+            <div class="row">
+              <button type="button" class="btn btn-danger btn-small" id="remove-yes">Yes, remove it<span class="ja" lang="ja">はい、取り消す</span></button>
+              <button type="button" class="btn btn-quiet" id="remove-no">Keep it<span class="ja" lang="ja">やめる</span></button>
+            </div>
+          </div>
+        </div>
         <p id="order-status" class="status" role="status" aria-live="polite"></p>
       </form>
     </section>
 
     <section class="panel" aria-labelledby="board-heading">
       <div class="board-head">
-        <h2 id="board-heading" style="margin:0">Everyone's orders</h2>
-        <p class="updated"><span id="updated"></span> <button type="button" class="btn btn-quiet" id="refresh">Refresh</button></p>
+        <h2 id="board-heading" style="margin:0">Everyone's orders <span class="ja" lang="ja">みんなの注文</span></h2>
+        <p class="updated"><span id="updated"></span> <button type="button" class="btn btn-quiet" id="refresh">Refresh<span class="ja" lang="ja">更新</span></button></p>
       </div>
       <div id="board"></div>
       <p class="board-note" id="board-note"></p>
@@ -83,9 +97,10 @@
 </main>
 
 <footer class="site-footer">
-  <div class="wrap"><p>Colchester Japanese Community 日本人会 · Made with care for everyone here.</p></div>
+  <div class="wrap"><p>Colchester Japanese Community 日本人会 · Made with care for everyone here.<span class="ja foot-ja" lang="ja">ここにいるみんなのために、心を込めて。</span></p></div>
 </footer>
 
+<script src="assets/icons.js"></script>
 <script src="assets/site.js"></script>
 <script src="assets/orders.js"></script>
 </body>

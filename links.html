@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#B84A1F">
-<title>Links | Colchester Japanese Community</title>
+<title>Links リンク | Colchester Japanese Community 日本人会</title>
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -31,57 +31,70 @@
 <main class="wrap">
   <!-- Passcode gate: nothing else on the page is shown until the group passcode is accepted -->
   <section id="gate" class="panel gate">
-    <h1 class="gate-title">Welcome <span class="ja" lang="ja">ようこそ</span></h1>
-    <p class="lede">This is a private space for our community. Please enter the group passcode to come in.</p>
-    <form id="gate-form" autocomplete="off">
+    <h1 class="gate-title"><span class="icon" data-icon="torii"></span>Welcome <span class="ja" lang="ja">ようこそ</span></h1>
+    <p class="lede">This is a private space for our community. Please enter the group passcode to come in.<span class="ja-line" lang="ja">ここは私たちのコミュニティのための非公開のスペースです。入るにはグループのパスコードを入力してください。</span></p>
+    <form id="gate-form" autocomplete="off" novalidate>
       <div class="field">
-        <label for="code">Passcode</label>
+        <label for="code">Passcode<span class="ja" lang="ja">パスコード</span></label>
         <input type="password" id="code" required>
       </div>
-      <button class="btn btn-block" type="submit">Come in</button>
+      <button class="btn btn-block" type="submit">Come in<span class="ja" lang="ja">入る</span></button>
       <p id="gate-status" class="status" role="status" aria-live="polite"></p>
     </form>
   </section>
 
   <div id="app" hidden>
-  <div class="page-head">
-    <h1>Links <span class="ja" lang="ja">リンク集</span></h1>
-    <p class="lede">Handy websites we like to visit. Each one opens in a new tab.</p>
-  </div>
+    <div class="page-head">
+      <span class="icon icon-lg" data-icon="link"></span>
+      <div>
+        <h1>Links <span class="ja" lang="ja">リンク集</span></h1>
+        <p class="lede">Handy websites we like to visit. Each one opens in a new tab.<span class="ja-line" lang="ja">私たちがよく見る便利なウェブサイトです。それぞれ新しいタブで開きます。</span></p>
+      </div>
+    </div>
 
-  <ul class="link-list">
-    <li>
-      <a class="link-card" href="https://tofucraft.co.uk/" target="_blank" rel="noopener">
-        <span class="link-kind">Website</span>
-        <div class="link-title">Tofu Craft</div>
-        <span class="link-url">tofucraft.co.uk</span>
-        <p>Visit the Tofu Craft website.</p>
-      </a>
-    </li>
-    <li>
-      <a class="link-card" href="https://www.everysprout.co.uk/green-tea" target="_blank" rel="noopener">
-        <span class="link-kind">Website</span>
-        <div class="link-title">Every Sprout: Green tea</div>
-        <span class="link-url">everysprout.co.uk/green-tea</span>
-        <p>Browse the green tea range at Every Sprout.</p>
-      </a>
-    </li>
-    <li>
-      <a class="link-card" href="https://www.instagram.com/daifukumorita/" target="_blank" rel="noopener">
-        <span class="link-kind">Instagram</span>
-        <div class="link-title">Daifuku Morita</div>
-        <span class="link-url">instagram.com/daifukumorita</span>
-        <p>Follow Daifuku Morita on Instagram.</p>
-      </a>
-    </li>
-  </ul>
+    <ul class="link-list">
+      <li>
+        <a class="link-card" href="https://tofucraft.co.uk/" target="_blank" rel="noopener">
+          <span class="chip"><span class="icon" data-icon="tofu"></span></span>
+          <div>
+            <span class="link-kind">Website<span class="ja" lang="ja">ウェブサイト</span></span>
+            <div class="link-title">Tofu Craft</div>
+            <span class="link-url">tofucraft.co.uk</span>
+            <p class="link-desc">Visit the Tofu Craft website.<span class="ja-line" lang="ja">Tofu Craft のウェブサイトを見る。</span></p>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a class="link-card" href="https://www.everysprout.co.uk/green-tea" target="_blank" rel="noopener">
+          <span class="chip"><span class="icon" data-icon="tea"></span></span>
+          <div>
+            <span class="link-kind">Website<span class="ja" lang="ja">ウェブサイト</span></span>
+            <div class="link-title">Every Sprout: Green tea <span class="ja" lang="ja">緑茶</span></div>
+            <span class="link-url">everysprout.co.uk/green-tea</span>
+            <p class="link-desc">Browse the green tea range at Every Sprout.<span class="ja-line" lang="ja">Every Sprout の緑茶の商品を見る。</span></p>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a class="link-card" href="https://www.instagram.com/daifukumorita/" target="_blank" rel="noopener">
+          <span class="chip"><span class="icon" data-icon="daifuku"></span></span>
+          <div>
+            <span class="link-kind">Instagram<span class="ja" lang="ja">インスタグラム</span></span>
+            <div class="link-title">Daifuku Morita</div>
+            <span class="link-url">instagram.com/daifukumorita</span>
+            <p class="link-desc">Follow Daifuku Morita on Instagram.<span class="ja-line" lang="ja">Instagram で Daifuku Morita をフォローする。</span></p>
+          </div>
+        </a>
+      </li>
+    </ul>
   </div>
 </main>
 
 <footer class="site-footer">
-  <div class="wrap"><p>Colchester Japanese Community 日本人会 · Made with care for everyone here.</p></div>
+  <div class="wrap"><p>Colchester Japanese Community 日本人会 · Made with care for everyone here.<span class="ja foot-ja" lang="ja">ここにいるみんなのために、心を込めて。</span></p></div>
 </footer>
 
+<script src="assets/icons.js"></script>
 <script src="assets/site.js"></script>
 <script src="assets/links.js"></script>
 </body>

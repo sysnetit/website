@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#B84A1F">
-<title>Logs | Colchester Japanese Community</title>
+<title>Logs 履歴 | Colchester Japanese Community 日本人会</title>
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -31,37 +31,41 @@
 <main class="wrap">
   <!-- Passcode gate: nothing else on the page is shown until the group passcode is accepted -->
   <section id="gate" class="panel gate">
-    <h1 class="gate-title">Welcome <span class="ja" lang="ja">ようこそ</span></h1>
-    <p class="lede">This is a private space for our community. Please enter the group passcode to come in.</p>
-    <form id="gate-form" autocomplete="off">
+    <h1 class="gate-title"><span class="icon" data-icon="torii"></span>Welcome <span class="ja" lang="ja">ようこそ</span></h1>
+    <p class="lede">This is a private space for our community. Please enter the group passcode to come in.<span class="ja-line" lang="ja">ここは私たちのコミュニティのための非公開のスペースです。入るにはグループのパスコードを入力してください。</span></p>
+    <form id="gate-form" autocomplete="off" novalidate>
       <div class="field">
-        <label for="code">Passcode</label>
+        <label for="code">Passcode<span class="ja" lang="ja">パスコード</span></label>
         <input type="password" id="code" required>
       </div>
-      <button class="btn btn-block" type="submit">Come in</button>
+      <button class="btn btn-block" type="submit">Come in<span class="ja" lang="ja">入る</span></button>
       <p id="gate-status" class="status" role="status" aria-live="polite"></p>
     </form>
   </section>
 
   <div id="app" hidden>
     <div class="page-head">
-      <h1>Logs <span class="ja" lang="ja">履歴</span></h1>
-      <p class="lede">A record of orders as they were added on the Orders page, newest first. Times are UK time.</p>
+      <span class="icon icon-lg" data-icon="notebook"></span>
+      <div>
+        <h1>Logs <span class="ja" lang="ja">履歴</span></h1>
+        <p class="lede">A record of orders as they were added, changed or removed on the Orders page, newest first. Times are UK time.<span class="ja-line" lang="ja">注文ページで追加・変更・取り消しされた注文の記録です（新しい順）。時刻は英国時間です。</span></p>
+      </div>
     </div>
 
     <div class="block-head">
       <p class="updated"><span id="updated"></span></p>
-      <button type="button" class="btn btn-quiet" id="refresh">Refresh</button>
+      <button type="button" class="btn btn-quiet" id="refresh">Refresh<span class="ja" lang="ja">更新</span></button>
     </div>
-    <p id="log-empty" class="empty" hidden>Nothing has been ordered yet.</p>
+    <p id="log-empty" class="empty" hidden>Nothing has been ordered yet.<span class="ja-line" lang="ja">まだ注文はありません。</span></p>
     <ol id="log-list" class="logs"></ol>
   </div>
 </main>
 
 <footer class="site-footer">
-  <div class="wrap"><p>Colchester Japanese Community 日本人会 · Made with care for everyone here.</p></div>
+  <div class="wrap"><p>Colchester Japanese Community 日本人会 · Made with care for everyone here.<span class="ja foot-ja" lang="ja">ここにいるみんなのために、心を込めて。</span></p></div>
 </footer>
 
+<script src="assets/icons.js"></script>
 <script src="assets/site.js"></script>
 <script src="assets/logs.js"></script>
 </body>
