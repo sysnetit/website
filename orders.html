@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#B84A1F">
+<title>Orders | Colchester Japanese Community</title>
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body class="locked">
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html">
+      <span class="hanko" aria-hidden="true" lang="ja">和</span>
+      <span class="brand-text"><strong>Colchester Japanese Community</strong><small lang="ja">日本人会</small></span>
+    </a>
+    <nav class="nav" aria-label="Main">
+      <a href="index.html">Home<span class="ja" lang="ja">ホーム</span></a>
+      <a href="orders.html" aria-current="page">Orders<span class="ja" lang="ja">ご注文</span></a>
+      <a href="haircut.html">Haircut<span class="ja" lang="ja">散髪</span></a>
+      <a href="logs.html">Logs<span class="ja" lang="ja">履歴</span></a>
+      <a href="links.html">Links<span class="ja" lang="ja">リンク</span></a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <!-- Passcode gate: nothing else on the page is shown until the group passcode is accepted -->
+  <section id="gate" class="panel gate">
+    <h1 class="gate-title">Welcome <span class="ja" lang="ja">ようこそ</span></h1>
+    <p class="lede">This is a private space for our community. Please enter the group passcode to come in.</p>
+    <form id="gate-form" autocomplete="off">
+      <div class="field">
+        <label for="code">Passcode</label>
+        <input type="password" id="code" required>
+      </div>
+      <button class="btn btn-block" type="submit">Come in</button>
+      <p id="gate-status" class="status" role="status" aria-live="polite"></p>
+    </form>
+  </section>
+
+  <div id="app" class="stack" hidden>
+    <div class="page-head">
+      <h1>Orders <span class="ja" lang="ja">ご注文</span></h1>
+      <p class="lede">Choose what you would like from each section, send your order, and the tables below show what everyone has ordered.</p>
+    </div>
+
+    <p class="lede" style="margin:0"><a href="#board-heading">Jump to everyone's orders</a></p>
+
+    <section class="panel order" aria-labelledby="order-heading">
+      <h2 id="order-heading" style="margin-bottom:1rem">Your order</h2>
+      <form id="order-form" autocomplete="off">
+        <div class="field">
+          <label for="name">Your name</label>
+          <input type="text" id="name" maxlength="40" required>
+        </div>
+        <fieldset class="field" id="collections">
+          <legend style="font-size:1rem">Collect from</legend>
+          <div class="choices" id="collection-choices"></div>
+        </fieldset>
+
+        <div id="sections"></div>
+
+        <p class="total-line" aria-live="polite">Your total <strong id="total">£0.00</strong><span class="hint" id="total-note"></span></p>
+        <button class="btn btn-block" type="submit" id="send">Send order</button>
+        <p id="order-status" class="status" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+
+    <section class="panel" aria-labelledby="board-heading">
+      <div class="board-head">
+        <h2 id="board-heading" style="margin:0">Everyone's orders</h2>
+        <p class="updated"><span id="updated"></span> <button type="button" class="btn btn-quiet" id="refresh">Refresh</button></p>
+      </div>
+      <div id="board"></div>
+      <p class="board-note" id="board-note"></p>
+    </section>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap"><p>Colchester Japanese Community 日本人会 · Made with care for everyone here.</p></div>
+</footer>
+
+<script src="assets/site.js"></script>
+<script src="assets/orders.js"></script>
+</body>
+</html>

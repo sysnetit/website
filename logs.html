@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#B84A1F">
+<title>Logs | Colchester Japanese Community</title>
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body class="locked">
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html">
+      <span class="hanko" aria-hidden="true" lang="ja">和</span>
+      <span class="brand-text"><strong>Colchester Japanese Community</strong><small lang="ja">日本人会</small></span>
+    </a>
+    <nav class="nav" aria-label="Main">
+      <a href="index.html">Home<span class="ja" lang="ja">ホーム</span></a>
+      <a href="orders.html">Orders<span class="ja" lang="ja">ご注文</span></a>
+      <a href="haircut.html">Haircut<span class="ja" lang="ja">散髪</span></a>
+      <a href="logs.html" aria-current="page">Logs<span class="ja" lang="ja">履歴</span></a>
+      <a href="links.html">Links<span class="ja" lang="ja">リンク</span></a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <!-- Passcode gate: nothing else on the page is shown until the group passcode is accepted -->
+  <section id="gate" class="panel gate">
+    <h1 class="gate-title">Welcome <span class="ja" lang="ja">ようこそ</span></h1>
+    <p class="lede">This is a private space for our community. Please enter the group passcode to come in.</p>
+    <form id="gate-form" autocomplete="off">
+      <div class="field">
+        <label for="code">Passcode</label>
+        <input type="password" id="code" required>
+      </div>
+      <button class="btn btn-block" type="submit">Come in</button>
+      <p id="gate-status" class="status" role="status" aria-live="polite"></p>
+    </form>
+  </section>
+
+  <div id="app" hidden>
+    <div class="page-head">
+      <h1>Logs <span class="ja" lang="ja">履歴</span></h1>
+      <p class="lede">A record of orders as they were added on the Orders page, newest first. Times are UK time.</p>
+    </div>
+
+    <div class="block-head">
+      <p class="updated"><span id="updated"></span></p>
+      <button type="button" class="btn btn-quiet" id="refresh">Refresh</button>
+    </div>
+    <p id="log-empty" class="empty" hidden>Nothing has been ordered yet.</p>
+    <ol id="log-list" class="logs"></ol>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap"><p>Colchester Japanese Community 日本人会 · Made with care for everyone here.</p></div>
+</footer>
+
+<script src="assets/site.js"></script>
+<script src="assets/logs.js"></script>
+</body>
+</html>

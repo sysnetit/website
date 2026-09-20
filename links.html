@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#B84A1F">
+<title>Links | Colchester Japanese Community</title>
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body class="locked">
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html">
+      <span class="hanko" aria-hidden="true" lang="ja">和</span>
+      <span class="brand-text"><strong>Colchester Japanese Community</strong><small lang="ja">日本人会</small></span>
+    </a>
+    <nav class="nav" aria-label="Main">
+      <a href="index.html">Home<span class="ja" lang="ja">ホーム</span></a>
+      <a href="orders.html">Orders<span class="ja" lang="ja">ご注文</span></a>
+      <a href="haircut.html">Haircut<span class="ja" lang="ja">散髪</span></a>
+      <a href="logs.html">Logs<span class="ja" lang="ja">履歴</span></a>
+      <a href="links.html" aria-current="page">Links<span class="ja" lang="ja">リンク</span></a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <!-- Passcode gate: nothing else on the page is shown until the group passcode is accepted -->
+  <section id="gate" class="panel gate">
+    <h1 class="gate-title">Welcome <span class="ja" lang="ja">ようこそ</span></h1>
+    <p class="lede">This is a private space for our community. Please enter the group passcode to come in.</p>
+    <form id="gate-form" autocomplete="off">
+      <div class="field">
+        <label for="code">Passcode</label>
+        <input type="password" id="code" required>
+      </div>
+      <button class="btn btn-block" type="submit">Come in</button>
+      <p id="gate-status" class="status" role="status" aria-live="polite"></p>
+    </form>
+  </section>
+
+  <div id="app" hidden>
+  <div class="page-head">
+    <h1>Links <span class="ja" lang="ja">リンク集</span></h1>
+    <p class="lede">Handy websites we like to visit. Each one opens in a new tab.</p>
+  </div>
+
+  <ul class="link-list">
+    <li>
+      <a class="link-card" href="https://tofucraft.co.uk/" target="_blank" rel="noopener">
+        <span class="link-kind">Website</span>
+        <div class="link-title">Tofu Craft</div>
+        <span class="link-url">tofucraft.co.uk</span>
+        <p>Visit the Tofu Craft website.</p>
+      </a>
+    </li>
+    <li>
+      <a class="link-card" href="https://www.everysprout.co.uk/green-tea" target="_blank" rel="noopener">
+        <span class="link-kind">Website</span>
+        <div class="link-title">Every Sprout: Green tea</div>
+        <span class="link-url">everysprout.co.uk/green-tea</span>
+        <p>Browse the green tea range at Every Sprout.</p>
+      </a>
+    </li>
+    <li>
+      <a class="link-card" href="https://www.instagram.com/daifukumorita/" target="_blank" rel="noopener">
+        <span class="link-kind">Instagram</span>
+        <div class="link-title">Daifuku Morita</div>
+        <span class="link-url">instagram.com/daifukumorita</span>
+        <p>Follow Daifuku Morita on Instagram.</p>
+      </a>
+    </li>
+  </ul>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap"><p>Colchester Japanese Community 日本人会 · Made with care for everyone here.</p></div>
+</footer>
+
+<script src="assets/site.js"></script>
+<script src="assets/links.js"></script>
+</body>
+</html>

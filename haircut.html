@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#B84A1F">
+<title>Haircut | Colchester Japanese Community</title>
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body class="locked">
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html">
+      <span class="hanko" aria-hidden="true" lang="ja">和</span>
+      <span class="brand-text"><strong>Colchester Japanese Community</strong><small lang="ja">日本人会</small></span>
+    </a>
+    <nav class="nav" aria-label="Main">
+      <a href="index.html">Home<span class="ja" lang="ja">ホーム</span></a>
+      <a href="orders.html">Orders<span class="ja" lang="ja">ご注文</span></a>
+      <a href="haircut.html" aria-current="page">Haircut<span class="ja" lang="ja">散髪</span></a>
+      <a href="logs.html">Logs<span class="ja" lang="ja">履歴</span></a>
+      <a href="links.html">Links<span class="ja" lang="ja">リンク</span></a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <!-- Passcode gate: nothing else on the page is shown until the group passcode is accepted -->
+  <section id="gate" class="panel gate">
+    <h1 class="gate-title">Welcome <span class="ja" lang="ja">ようこそ</span></h1>
+    <p class="lede">This is a private space for our community. Please enter the group passcode to come in.</p>
+    <form id="gate-form" autocomplete="off">
+      <div class="field">
+        <label for="code">Passcode</label>
+        <input type="password" id="code" required>
+      </div>
+      <button class="btn btn-block" type="submit">Come in</button>
+      <p id="gate-status" class="status" role="status" aria-live="polite"></p>
+    </form>
+  </section>
+
+  <div id="app" hidden>
+    <div class="page-head">
+      <h1>Haircut <span class="ja" lang="ja">散髪</span></h1>
+      <p class="lede">Pick a day, then book a one-hour slot between 09:00 and 17:00. Each slot is for one person.</p>
+    </div>
+
+    <section class="panel" aria-labelledby="day-heading">
+      <div class="day-picker">
+        <div class="field">
+          <label for="hc-name">Your name</label>
+          <input type="text" id="hc-name" maxlength="40" autocomplete="off">
+        </div>
+        <div class="field">
+          <label for="hc-day">Day</label>
+          <input type="date" id="hc-day">
+        </div>
+        <div class="day-nav">
+          <button type="button" class="btn btn-quiet" id="hc-prev">&larr; Previous day</button>
+          <button type="button" class="btn btn-quiet" id="hc-next">Next day &rarr;</button>
+        </div>
+      </div>
+
+      <h2 class="day-title" id="day-heading"></h2>
+
+      <div class="table-wrap">
+        <table class="slots">
+          <caption class="sr-only">Haircut time slots for the chosen day</caption>
+          <thead>
+            <tr><th scope="col">Time</th><th scope="col">Name</th><th scope="col"><span class="sr-only">Action</span></th></tr>
+          </thead>
+          <tbody id="slots"></tbody>
+        </table>
+      </div>
+
+      <p id="hc-status" class="status" role="status" aria-live="polite"></p>
+      <p class="board-note"><span id="hc-updated"></span> <button type="button" class="btn btn-quiet" id="hc-refresh">Refresh</button></p>
+    </section>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap"><p>Colchester Japanese Community 日本人会 · Made with care for everyone here.</p></div>
+</footer>
+
+<script src="assets/site.js"></script>
+<script src="assets/haircut.js"></script>
+</body>
+</html>
